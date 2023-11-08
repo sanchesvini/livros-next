@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { ControleLivro } from '../../../classes/ControleLivro';
+import controleLivro from '../../../classes/ControleLivroSingleton';
 
-const controleLivro = new ControleLivro();
+//const controleLivro = new ControleLivro();
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'DELETE') {

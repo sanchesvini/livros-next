@@ -1,7 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { ControleLivro } from '../../../classes/ControleLivro';
+//import { ControleLivro } from '../../../classes/ControleLivro';
+import controleLivro from '../../../classes/ControleLivroSingleton';
+import { Livro } from '@/modelo/Livro';
 
-const controleLivro = new ControleLivro();
+//const controleLivro = new ControleLivro();
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
@@ -13,7 +15,8 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     }
   } else if (req.method === 'POST') {
     try {
-      const novoLivro = req.body;
+      const {codEditora, titulo, autores, anoPublicacao } = req.body;
+    const novoLivro = new Livro(0, codEditora, titulo, autores, anoPublicacao);
       controleLivro.incluir(novoLivro);
       res.status(200).json({ mensagem: 'Livro adicionado com sucesso.' });
     } catch (error) {
