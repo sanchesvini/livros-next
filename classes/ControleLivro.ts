@@ -23,7 +23,7 @@ class ControleLivro {
       this.livros.push(livro);
       console.log("Livro adicionado na lista:");
       this.livros.forEach((livro) => {
-        console.log(`Código: ${livro.getCodigo()}, Título: ${livro.getTitulo()}`);
+        console.log(`Código: ${livro.getCodigo()}, Título: ${livro.getTitulo()}, ${livro.resumo}, ${livro.autores}`);
       });
     } else {
       console.error('Não é uma instância de Livro');
