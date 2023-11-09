@@ -7,9 +7,9 @@ class ControleEditora {
   constructor() {
     // Inicialize o vetor de editoras com pelo menos três elementos no formato JSON
     this.editoras = [
-      new Editora(1, "Alta Books"),
-      new Editora(2, "Pearson"),
-      new Editora(3, "Addison Wesley")
+      new Editora(0, "Alta Books"),
+      new Editora(1, "Pearson"),
+      new Editora(2, "Addison Wesley")
     ];
   }
 
